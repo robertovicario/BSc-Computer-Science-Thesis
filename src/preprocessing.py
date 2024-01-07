@@ -21,13 +21,20 @@ def preprocess_data(file_path, stats):
     # Reduce dimensionality using PCA while retaining 95% of the variance
     pca = PCA(n_components=0.95, random_state=42)
     X_pca = pca.fit_transform(X_standardized)
-    
-    # Print statistical summary of data after preprocessing
-    print(pd.DataFrame(X_pca).describe())
 
     if (stats):
         # Print statistical summary of data before and after preprocessing
-        print(pd.DataFrame(X).describe())
-        print(pd.DataFrame(X_pca).describe())
+        print(f"""Train set before preprocessing:
+              
+        {pd.DataFrame(X).describe()}
+        """)
+        print(f"""Test set after preprocessing:
+              
+        {pd.DataFrame(X_pca).describe()}
+        """)
 
     return X_pca, y
+
+# Load and preprocess the data
+preprocess_data('/kaggle/input/swell-heart-rate-variability-hrv/hrv dataset/data/final/train.csv', True)
+preprocess_data('/kaggle/input/swell-heart-rate-variability-hrv/hrv dataset/data/final/test.csv', True)
