@@ -80,8 +80,13 @@ def tune_hyperparameters(model, param_dist, X, y, cv):
     #
     best_params = random_search.best_params_
     best_estimator = random_search.best_estimator_
+
+    print(f"""Best parameters:
+
+    {best_params}
+    """)
     
-    return best_params, best_estimator
+    return best_estimator
 
 #
 X0_train, X_train, y_train = preprocess_data('/Users/robertovicario/Downloads/hrv dataset/data/final/train.csv')

@@ -1,6 +1,6 @@
 from sklearn.linear_model import LogisticRegression
 from utils import X_test, X_train, y_test, y_train
-from utils import evaluate_model
+from utils import evaluate_model, tune_hyperparameters
 
 #
 logistic_regression = LogisticRegression()
@@ -15,5 +15,5 @@ param_dist = {
 }
 
 #
-logistic_regression.fit(X_train, y_train)
-evaluate_model(logistic_regression, X_train, y_train, X_test, y_test, cv=2)
+best_estimator = tune_hyperparameters(logistic_regression, param_dist, X_train, y_train, cv=2)
+evaluate_model(best_estimator, X_train, y_train, X_test, y_test, cv=2)
