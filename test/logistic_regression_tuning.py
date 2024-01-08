@@ -1,6 +1,7 @@
 from sklearn.linear_model import LogisticRegression
-from utils import X_test, X_train, y_test, y_train
-from utils import evaluate_model, tune_hyperparameters
+import sys
+sys.path.append('./src')
+from utils import X_test, X_train, evaluate_model, tune_hyperparameters, y_test, y_train
 
 #
 logistic_regression = LogisticRegression()
