@@ -1,6 +1,4 @@
 from sklearn.neural_network import MLPClassifier
-import sys
-sys.path.append('./src')
 from utils import X_test, X_train, evaluate_model, tune_hyperparameters, y_test, y_train
 
 #
