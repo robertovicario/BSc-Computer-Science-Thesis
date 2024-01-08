@@ -89,5 +89,5 @@ def tune_hyperparameters(model, param_dist, X, y, cv):
     return best_estimator
 
 #
-X0_train, X_train, y_train = preprocess_data('/Users/robertovicario/Downloads/hrv dataset/data/final/train.csv')
-X0_test, X_test, y_test = preprocess_data('/Users/robertovicario/Downloads/hrv dataset/data/final/test.csv')
+X0_train, X_train, y_train = preprocess_data('./data/train.csv')
+X0_test, X_test, y_test = preprocess_data('./data/test.csv')
