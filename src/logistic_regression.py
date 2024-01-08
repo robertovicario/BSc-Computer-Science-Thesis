@@ -3,7 +3,11 @@ from utils import X_test, X_train, evaluate_model, y_test, y_train
 
 #
 logistic_regression = LogisticRegression(
-
+    solver='saga',
+    penalty='l1',
+    max_iter=100,
+    class_weight=None,
+    C=0.01
 )
 
 #
