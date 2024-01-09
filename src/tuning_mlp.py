@@ -1,5 +1,5 @@
 from sklearn.neural_network import MLPClassifier
-from utils import X_test, X_train, evaluate_model, tune_hyperparameters, y_test, y_train
+from utils import X_train, tune_hyperparameters, y_train
 
 #
 mlp = MLPClassifier()
@@ -15,4 +15,3 @@ param_dist = {
 
 #
 best_estimator = tune_hyperparameters(mlp, param_dist, X_train, y_train, cv=3)
-evaluate_model(best_estimator, X_train, y_train, X_test, y_test, cv=3)
