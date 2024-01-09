@@ -1,0 +1,4 @@
+Best parameters:
+
+    {'solver': 'adam', 'learning_rate': 'invscaling', 'hidden_layer_sizes': (100,), 'alpha': 0.001, 'activation': 'logistic'}
+    

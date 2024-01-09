@@ -9,7 +9,7 @@ mlp = MLPClassifier(
     alpha=0.001,
     activation='tanh'
 )
+mlp.fit(X_train, y_train)
 
 #
-mlp.fit(X_train, y_train)
 evaluate_model(mlp, X_train, y_train, X_test, y_test, cv=3)

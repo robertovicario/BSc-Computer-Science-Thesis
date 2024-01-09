@@ -23,3 +23,4 @@ Per qualsiasi domanda, feedback o richiesta di informazioni su questo progetto, 
 - Email: [rvicariodev@gmail.com](mailto:rvicariodev@gmail.com)
 - Sito web: [robertovicario.com](https://www.robertovicario.com)
 - LinkedIn: [robertovicario](https://www.linkedin.com/in/robertovicario)
+- Kaggle: [robertovicario](https://www.kaggle.com/robertovicario)
