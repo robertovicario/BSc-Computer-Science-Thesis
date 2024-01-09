@@ -12,4 +12,4 @@ logistic_regression = LogisticRegression(
 
 #
 logistic_regression.fit(X_train, y_train)
-evaluate_model(logistic_regression, X_train, y_train, X_test, y_test, cv=2)
+evaluate_model(logistic_regression, X_train, y_train, X_test, y_test, cv=3)

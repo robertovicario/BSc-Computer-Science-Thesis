@@ -14,5 +14,5 @@ param_dist = {
 }
 
 #
-best_estimator = tune_hyperparameters(mlp, param_dist, X_train, y_train, cv=2)
-evaluate_model(best_estimator, X_train, y_train, X_test, y_test, cv=2)
+best_estimator = tune_hyperparameters(mlp, param_dist, X_train, y_train, cv=3)
+evaluate_model(best_estimator, X_train, y_train, X_test, y_test, cv=3)

@@ -12,4 +12,4 @@ mlp = MLPClassifier(
 
 #
 mlp.fit(X_train, y_train)
-evaluate_model(mlp, X_train, y_train, X_test, y_test, cv=2)
+evaluate_model(mlp, X_train, y_train, X_test, y_test, cv=3)
