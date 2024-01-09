@@ -1,0 +1,17 @@
+Classification report:
+
+                   precision    recall  f1-score   support
+
+ interruption       1.00      0.99      0.99     11782
+    no stress       0.99      1.00      1.00     22158
+time pressure       1.00      0.99      1.00      7093
+
+     accuracy                           1.00     41033
+    macro avg       1.00      0.99      1.00     41033
+ weighted avg       1.00      1.00      1.00     41033
+
+    
+Cross-validation scores:
+
+    [0.99997563 1.         0.99996751]
+    
