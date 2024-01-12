@@ -29,13 +29,21 @@ def preprocess_data(file_path):
 
     return X, X_pca, y
 
+def visualize_data(y):
+    #
+    label_counts = y.value_counts()
+
+    #
+    plt.pie(label_counts, labels=label_counts.index, autopct='%1.1f%%')
+    plt.title("Pie Chart")
+    plt.show()
+
 def evaluate_preprocessing(X):
     #
     df_pca = pd.DataFrame(data=X)
     corr_matrix = df_pca.corr()
 
     #
-    plt.figure(figsize=(10, 10))
     sns.heatmap(corr_matrix, cmap='coolwarm')
     plt.title("Pearson's Correlation Matrix")
     plt.show()
