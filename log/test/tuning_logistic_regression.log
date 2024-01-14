@@ -1,4 +1,0 @@
-Best parameters:
-
-    {'solver': 'saga', 'penalty': 'l1', 'max_iter': 100, 'class_weight': None, 'C': 0.01}
-    

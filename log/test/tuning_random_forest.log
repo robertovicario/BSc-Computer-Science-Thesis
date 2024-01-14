@@ -1,4 +1,0 @@
-Best parameters:
-
-    {'n_estimators': 50, 'min_samples_split': 2, 'min_samples_leaf': 4, 'max_features': 'log2', 'max_depth': None, 'criterion': 'gini', 'bootstrap': False}
-    
