@@ -18,16 +18,15 @@ def preprocess_data(file_path):
     IQR = Q3 - Q1
     features = features[~((features < (Q1 - 1.5 * IQR)) | (features > (Q3 + 1.5 * IQR))).any(axis=1)]
 
-    # Standardize features
     scaler = StandardScaler()
     standardized_features = scaler.fit_transform(features)
 
-    positive_features = np.where(standardized_features > 0, standardized_features, standardized_features.min() + 1)
+    """positive_features = np.where(standardized_features > 0, standardized_features, standardized_features.min() + 1)
     pt = PowerTransformer(method='box-cox')
-    transformed_features = pt.fit_transform(positive_features)
+    transformed_features = pt.fit_transform(positive_features)"""
 
     pca = PCA(n_components=0.95, random_state=42)
-    pca_features = pca.fit_transform(transformed_features)
+    pca_features = pca.fit_transform(standardized_features)
 
     return pca_features, target
 
