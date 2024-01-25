@@ -3,11 +3,10 @@ from preprocessing import X_test, X_train, y_test, y_train
 from evaluation import evaluate_classification
 
 logistic_regression = LogisticRegression(
-    solver='saga',
+    C=0.01,
+    max_iter=300,
     penalty='l1',
-    max_iter=100,
-    class_weight=None,
-    C=0.01
+    solver='saga'
 )
 logistic_regression.fit(X_train, y_train)
 

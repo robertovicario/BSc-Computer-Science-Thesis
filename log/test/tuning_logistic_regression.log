@@ -1,0 +1,2 @@
+best_params_ {'solver': 'saga', 'penalty': 'l1', 'max_iter': 300, 'class_weight': None, 'C': 0.01}
+best_estimator_ LogisticRegression(C=0.01, max_iter=300, penalty='l1', solver='saga')

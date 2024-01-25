@@ -1,16 +1,11 @@
-from sklearn.tree import DecisionTreeClassifier
-from utils import X_test, X_train, evaluate_model, y_test, y_train
+from sklearn.tree import DecisionTreeRegressor
+from preprocessing import X_test, X_train, y_test, y_train
+from evaluation import evaluate_regression
 
-#
-decision_tree = DecisionTreeClassifier(
-    splitter='best',
-    min_samples_split=2,
-    min_samples_leaf=1,
-    max_features=None,
-    max_depth=20,
-    criterion='gini'
+decision_tree = DecisionTreeRegressor(
+    criterion='friedman_mse',
+    max_features='log2'
 )
 decision_tree.fit(X_train, y_train)
 
-#
-evaluate_model(decision_tree, X_train, y_train, X_test, y_test, cv=3)
+evaluate_regression(decision_tree, X_train, y_train, X_test, y_test, cv=3)
