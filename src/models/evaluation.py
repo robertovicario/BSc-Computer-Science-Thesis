@@ -11,7 +11,7 @@ def plot_confusion_matrix(y_test, y_pred):
     plt.ylabel('True Label')
     plt.show()
 
-def evaluate_classification(model, X_train, y_train, X_test, y_test, cv=5):
+def evaluate_classifier(model, X_train, y_train, X_test, y_test, cv=5):
     y_pred = model.predict(X_test)
     report = classification_report(y_test, y_pred)
     print('classification_report', report)
@@ -21,7 +21,7 @@ def evaluate_classification(model, X_train, y_train, X_test, y_test, cv=5):
 
     plot_confusion_matrix(y_test, y_pred)
 
-def evaluate_regression(model, X_train, y_train, X_test, y_test, cv=5):
+def evaluate_regressor(model, X_train, y_train, X_test, y_test, cv=5):
     y_pred = model.predict(X_test)
     r2 = r2_score(y_test, y_pred)
     print('r2_score', f'{r2:.4f}')
