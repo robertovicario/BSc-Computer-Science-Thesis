@@ -1,7 +1,7 @@
 from sklearn.cluster import KMeans
-from utils import X_train, tune_hyperparameters, y_train
+from preprocessing import X_train, y_train
+from tuning import tune_hyperparameters
 
-#
 kmeans = KMeans()
 kmeans.fit(X_train)
 labels = kmeans.labels_
@@ -14,5 +14,4 @@ param_dist = {
     'random_state': [1000]
 }
 
-#
 best_estimator = tune_hyperparameters(kmeans, param_dist, X_train, y_train, cv=3)

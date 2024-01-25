@@ -1,10 +1,9 @@
 from sklearn.linear_model import LogisticRegression
-from utils import X_train, tune_hyperparameters, y_train
+from preprocessing import X_train, y_train
+from tuning import tune_hyperparameters
 
-#
 logistic_regression = LogisticRegression()
 
-#
 param_dist = {
     'penalty': ['l1', 'l2'],
     'C': [0.001, 0.01, 0.1, 1.0, 10.0],
@@ -13,5 +12,4 @@ param_dist = {
     'class_weight': [None, 'balanced']
 }
 
-#
 best_estimator = tune_hyperparameters(logistic_regression, param_dist, X_train, y_train, cv=3)

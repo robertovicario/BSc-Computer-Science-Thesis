@@ -3,7 +3,7 @@ from sklearn.metrics import classification_report, confusion_matrix
 from sklearn.model_selection import cross_val_score
 import seaborn as sns
 
-def evaluate_supervised(model, X_train, y_train, X_test, y_test, cv):
+def evaluate_classification(model, X_train, y_train, X_test, y_test, cv):
     y_pred = model.predict(X_test)
     classification_rep = classification_report(y_test, y_pred)
     print(classification_rep)
@@ -17,6 +17,3 @@ def evaluate_supervised(model, X_train, y_train, X_test, y_test, cv):
     plt.xlabel('Predicted Label')
     plt.ylabel('True Label')
     plt.show()
-
-def evaluate_unsupervised():
-    pass
