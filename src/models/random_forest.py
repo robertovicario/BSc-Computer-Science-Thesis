@@ -3,13 +3,11 @@ from preprocessing import X_test, X_train, y_test, y_train
 from evaluation import evaluate_regressor
 
 random_forest = RandomForestRegressor(
-    n_estimators=50,
-    min_samples_split=2,
-    min_samples_leaf=4,
-    max_features='log2',
-    max_depth=None,
-    criterion='gini',
-    bootstrap=False
+    bootstrap=False,
+    max_depth=40,
+    max_features='sqrt',
+    min_samples_split=10,
+    n_estimators=200
 )
 random_forest.fit(X_train, y_train)
 
