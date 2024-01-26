@@ -1,6 +1,6 @@
 import matplotlib.pyplot as plt
 import seaborn as sns
-from sklearn.metrics import classification_report, confusion_matrix, silhouette_score
+from sklearn.metrics import classification_report, confusion_matrix, pairwise_distances, silhouette_score
 from sklearn.model_selection import cross_val_score
 
 def plot_confusion_matrix(y_test, y_pred):
@@ -11,7 +11,7 @@ def plot_confusion_matrix(y_test, y_pred):
     plt.ylabel('True Label')
     plt.show()
 
-def evaluate_classifier(model, X_train, y_train, X_test, y_test, cv):
+def evaluate_classification(model, X_train, y_train, X_test, y_test, cv):
     y_pred = model.predict(X_test)
     report = classification_report(y_test, y_pred)
     print(report)
@@ -24,3 +24,8 @@ def evaluate_classifier(model, X_train, y_train, X_test, y_test, cv):
 def evaluate_clustering(X_train, labels):
     silhouette_avg = silhouette_score(X_train, labels)
     print('silhouette_score:', silhouette_avg)
+
+    distance_matrix = pairwise_distances(X_train)
+    sns.heatmap(distance_matrix, annot=False, cmap='viridis')
+    plt.title('Pairwise Distance Matrix')
+    plt.show()

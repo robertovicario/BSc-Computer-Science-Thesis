@@ -1,6 +1,6 @@
 from sklearn.tree import DecisionTreeClassifier
 from preprocessing import X_test, X_train, y_test, y_train
-from evaluation import evaluate_classifier
+from evaluation import evaluate_classification
 
 decision_tree = DecisionTreeClassifier(
     criterion='gini',
@@ -9,4 +9,4 @@ decision_tree = DecisionTreeClassifier(
 )
 decision_tree.fit(X_train, y_train)
 
-evaluate_classifier(decision_tree, X_train, y_train, X_test, y_test, cv=10)
+evaluate_classification(decision_tree, X_train, y_train, X_test, y_test, cv=10)
