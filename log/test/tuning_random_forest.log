@@ -1,3 +1,0 @@
-best_params_ {'n_estimators': 200, 'min_samples_split': 10, 'min_samples_leaf': 1, 'max_features': 'sqrt', 'max_depth': 40, 'bootstrap': False}
-best_estimator_ RandomForestRegressor(bootstrap=False, max_depth=40, max_features='sqrt',
-                      min_samples_split=10, n_estimators=200)

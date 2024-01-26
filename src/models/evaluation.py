@@ -1,6 +1,6 @@
 import matplotlib.pyplot as plt
 import seaborn as sns
-from sklearn.metrics import r2_score, classification_report, confusion_matrix
+from sklearn.metrics import r2_score, classification_report, confusion_matrix, silhouette_score
 from sklearn.model_selection import cross_val_score
 
 def plot_confusion_matrix(y_test, y_pred):
@@ -11,22 +11,26 @@ def plot_confusion_matrix(y_test, y_pred):
     plt.ylabel('True Label')
     plt.show()
 
-def evaluate_classifier(model, X_train, y_train, X_test, y_test, cv=5):
+def evaluate_classifier(model, X_train, y_train, X_test, y_test, cv):
     y_pred = model.predict(X_test)
     report = classification_report(y_test, y_pred)
-    print('classification_report', report)
+    print(report)
     
     cv_scores = cross_val_score(model, X_train, y_train, cv=cv, scoring='accuracy')
-    print('cv_scores.mean', f'{cv_scores.mean():.4f}')
+    print('cv_scores.mean:', f'{cv_scores.mean():.4f}')
 
     plot_confusion_matrix(y_test, y_pred)
 
-def evaluate_regressor(model, X_train, y_train, X_test, y_test, cv=5):
+def evaluate_regressor(model, X_train, y_train, X_test, y_test, cv):
     y_pred = model.predict(X_test)
     r2 = r2_score(y_test, y_pred)
-    print('r2_score', f'{r2:.4f}')
+    print('r2_score:', f'{r2:.4f}')
 
     cv_scores = cross_val_score(model, X_train, y_train, cv=cv, scoring='r2')
-    print('cv_scores.mean', f'{cv_scores.mean():.4f}')
+    print('cv_scores.mean:', f'{cv_scores.mean():.4f}')
 
     plot_confusion_matrix(y_test, y_pred)
+
+def evaluate_clustering(X_train, labels):
+    silhouette_avg = silhouette_score(X_train, labels)
+    print('silhouette_score:', silhouette_avg)

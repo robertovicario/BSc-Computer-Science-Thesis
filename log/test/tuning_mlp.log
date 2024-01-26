@@ -1,3 +1,0 @@
-best_params_ {'solver': 'adam', 'learning_rate': 'adaptive', 'hidden_layer_sizes': (50, 100, 50), 'alpha': 0.001, 'activation': 'tanh'}
-best_estimator_ MLPClassifier(activation='tanh', alpha=0.001, hidden_layer_sizes=(50, 100, 50),
-              learning_rate='adaptive')

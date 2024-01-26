@@ -1,18 +1,9 @@
 from sklearn.cluster import KMeans
-from sklearn.metrics import silhouette_score
-from utils import X_train
+from evaluation import evaluate_clustering
+from preprocessing import X_train
 
-#
-kmeans = KMeans(
-    random_state=1000,
-    n_init=20,
-    n_clusters=3,
-    max_iter=100,
-    init='k-means++'
-)
+kmeans = KMeans(n_clusters=3)
 kmeans.fit(X_train)
 labels = kmeans.labels_
 
-#
-silhouette_avg = silhouette_score(X_train, labels)
-print("silhouette_score:", silhouette_avg)
+evaluate_clustering(X_train, labels)
