@@ -6,7 +6,7 @@ from sklearn.metrics import classification_report, confusion_matrix
 from sklearn.model_selection import cross_val_score
 from sklearn.preprocessing import StandardScaler
 
-def preprocess_data(file_path):
+def preprocess_data_supervised(file_path):
     df = pd.read_csv(file_path)
 
     condition_encoding = {'no stress': 0, 'time pressure': 1, 'interruption': 2}
@@ -23,8 +23,8 @@ def preprocess_data(file_path):
 
     return pca_features, target
 
-X_train, y_train = preprocess_data('./data/train.csv')
-X_test, y_test = preprocess_data('./data/test.csv')
+X_train, y_train = preprocess_data_supervised('./data/train.csv')
+X_test, y_test = preprocess_data_supervised('./data/test.csv')
 
 def evaluate_classification(model, X_train, y_train, X_test, y_test, cv):
     y_pred = model.predict(X_test)

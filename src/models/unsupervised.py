@@ -4,7 +4,7 @@ from sklearn.decomposition import PCA
 from sklearn.metrics import silhouette_samples, silhouette_score
 from sklearn.preprocessing import StandardScaler
 
-def preprocess_data(file_path):
+def preprocess_data_unsupervised(file_path):
     df = pd.read_csv(file_path)
 
     condition_encoding = {'no stress': 0, 'time pressure': 1, 'interruption': 2}
@@ -18,7 +18,7 @@ def preprocess_data(file_path):
 
     return pca_features
 
-X_test = preprocess_data('./data/test.csv')
+X_test = preprocess_data_unsupervised('./data/test.csv')
 
 def evaluate_clustering(X_test, labels):
     silhouette = silhouette_score(X_test, labels)
