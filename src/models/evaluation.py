@@ -23,7 +23,7 @@ def evaluate_classification(model, X_train, y_train, X_test, y_test, cv):
 
 def evaluate_clustering(X_train, labels):
     silhouette_avg = silhouette_score(X_train, labels)
-    print('silhouette_score:', silhouette_avg)
+    print('silhouette_score:', f'{silhouette_avg:.4f}')
 
     distance_matrix = pairwise_distances(X_train)
     sns.heatmap(distance_matrix, annot=False, cmap='viridis')
