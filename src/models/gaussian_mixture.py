@@ -1,6 +1,5 @@
 from sklearn.mixture import GaussianMixture
-from evaluation import evaluate_clustering
-from unsupervised import X_train
+from unsupervised import X_train, evaluate_clustering
 
 subset_size = int(0.01 * len(X_train))
 X_train = X_train[:subset_size]

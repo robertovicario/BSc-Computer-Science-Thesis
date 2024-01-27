@@ -1,6 +1,5 @@
 import matplotlib.pyplot as plt
 import pandas as pd
-import seaborn as sns
 from sklearn.metrics import silhouette_samples, silhouette_score
 from sklearn.decomposition import PCA
 from sklearn.preprocessing import StandardScaler
@@ -20,8 +19,8 @@ def preprocess_data(file_path):
     return pca_features
 
 def evaluate_clustering(X_train, labels):
-    silhouette_avg = silhouette_score(X_train, labels)
-    print('silhouette_score:', f'{silhouette_avg:.4f}')
+    silhouette = silhouette_score(X_train, labels)
+    print('silhouette_score:', f'{silhouette:.4f}')
 
     silhouette_vals = silhouette_samples(X_train, labels)
     y_ticks = []
@@ -38,7 +37,7 @@ def evaluate_clustering(X_train, labels):
         y_ticks.append((y_lower + y_upper) / 2)
         y_lower += len(cluster_silhouette_vals)
 
-    plt.axvline(x=silhouette_avg, color="red", linestyle="--")
+    plt.axvline(x=silhouette, color="red", linestyle="--")
     plt.yticks(y_ticks, range(len(set(labels))))
     plt.xlabel('Silhouette Coefficient')
     plt.ylabel('Cluster')
