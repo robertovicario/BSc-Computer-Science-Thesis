@@ -44,4 +44,4 @@ def evaluate_clustering(X_train, labels):
     plt.title('Silhouette Plot')
     plt.show()
 
-X_train = preprocess_data('./data/train.csv')
+X_test = preprocess_data('./data/test.csv')
