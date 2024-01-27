@@ -1,5 +1,5 @@
-import pandas as pd
 import matplotlib.pyplot as plt
+import pandas as pd
 import seaborn as sns
 from sklearn.decomposition import PCA
 from sklearn.metrics import classification_report, confusion_matrix
@@ -36,7 +36,7 @@ def evaluate_classification(model, X_train, y_train, X_test, y_test, cv):
 
     conf_matrix = confusion_matrix(y_test, y_pred)
     sns.heatmap(conf_matrix, annot=True, cmap='Blues')
-    plt.title('Confusion Matrix')
+    plt.title('confusion_matrix')
     plt.xlabel('Predicted Label')
     plt.ylabel('True Label')
     plt.show()

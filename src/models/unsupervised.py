@@ -41,7 +41,7 @@ def evaluate_clustering(X_test, labels):
 
     plt.axvline(x=silhouette, color="red", linestyle="--")
     plt.yticks(y_ticks, range(len(set(labels))))
-    plt.xlabel('Silhouette Coefficient')
+    plt.xlabel('silhouette_samples')
     plt.ylabel('Cluster')
     plt.title('Silhouette Plot')
     plt.show()
