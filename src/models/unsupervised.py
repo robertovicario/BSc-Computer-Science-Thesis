@@ -18,11 +18,13 @@ def preprocess_data(file_path):
 
     return pca_features
 
-def evaluate_clustering(X_train, labels):
-    silhouette = silhouette_score(X_train, labels)
+X_test = preprocess_data('./data/test.csv')
+
+def evaluate_clustering(X_test, labels):
+    silhouette = silhouette_score(X_test, labels)
     print('silhouette_score:', f'{silhouette:.4f}')
 
-    silhouette_vals = silhouette_samples(X_train, labels)
+    silhouette_vals = silhouette_samples(X_test, labels)
     y_ticks = []
     y_lower, y_upper = 0, 0
 
@@ -43,5 +45,3 @@ def evaluate_clustering(X_train, labels):
     plt.ylabel('Cluster')
     plt.title('Silhouette Plot')
     plt.show()
-
-X_test = preprocess_data('./data/test.csv')

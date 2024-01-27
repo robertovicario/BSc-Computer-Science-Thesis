@@ -23,6 +23,9 @@ def preprocess_data(file_path):
 
     return pca_features, target
 
+X_train, y_train = preprocess_data('./data/train.csv')
+X_test, y_test = preprocess_data('./data/test.csv')
+
 def evaluate_classification(model, X_train, y_train, X_test, y_test, cv):
     y_pred = model.predict(X_test)
     report = classification_report(y_test, y_pred)
@@ -37,6 +40,3 @@ def evaluate_classification(model, X_train, y_train, X_test, y_test, cv):
     plt.xlabel('Predicted Label')
     plt.ylabel('True Label')
     plt.show()
-
-X_train, y_train = preprocess_data('./data/train.csv')
-X_test, y_test = preprocess_data('./data/test.csv')
