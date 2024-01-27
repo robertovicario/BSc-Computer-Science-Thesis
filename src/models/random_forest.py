@@ -1,6 +1,5 @@
 from sklearn.ensemble import RandomForestClassifier
-from preprocessing import X_test, X_train, y_test, y_train
-from evaluation import evaluate_classification
+from supervised import X_test, X_train, evaluate_classification, y_test, y_train
 
 random_forest = RandomForestClassifier(
     criterion='gini',

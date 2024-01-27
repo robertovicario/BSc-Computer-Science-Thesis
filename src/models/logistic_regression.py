@@ -1,6 +1,5 @@
 from sklearn.linear_model import LogisticRegression
-from preprocessing import X_test, X_train, y_test, y_train
-from evaluation import evaluate_classification
+from supervised import X_test, X_train, evaluate_classification, y_test, y_train
 
 logistic_regression = LogisticRegression(
     solver='lbfgs',

@@ -1,29 +1,27 @@
 import matplotlib.pyplot as plt
+import pandas as pd
 import seaborn as sns
-from sklearn.metrics import classification_report, confusion_matrix, silhouette_samples, silhouette_score
-from sklearn.model_selection import cross_val_score
+from sklearn.metrics import silhouette_samples, silhouette_score
+from sklearn.decomposition import PCA
+from sklearn.preprocessing import StandardScaler
 
-def evaluate_classification(model, X_train, y_train, X_test, y_test, cv):
-    y_pred = model.predict(X_test)
-    report = classification_report(y_test, y_pred)
-    print(report)
-    
-    cv_scores = cross_val_score(model, X_train, y_train, cv=cv, scoring='accuracy')
-    print('cv_scores.mean:', f'{cv_scores.mean():.4f}')
+def preprocess_data(file_path):
+    df = pd.read_csv(file_path)
 
-    conf_matrix = confusion_matrix(y_test, y_pred)
-    sns.heatmap(conf_matrix, annot=True, cmap='Blues')
-    plt.title('Confusion Matrix')
-    plt.xlabel('Predicted Label')
-    plt.ylabel('True Label')
-    plt.show()
+    condition_encoding = {'no stress': 0, 'time pressure': 1, 'interruption': 2}
+    df['condition'] = df['condition'].map(condition_encoding)
 
-def evaluate_clustering(model, X_train, labels, cv):
+    scaler = StandardScaler()
+    standardized_features = scaler.fit_transform(df)
+
+    pca = PCA(n_components=0.95, random_state=42)
+    pca_features = pca.fit_transform(standardized_features)
+
+    return pca_features
+
+def evaluate_clustering(X_train, labels):
     silhouette_avg = silhouette_score(X_train, labels)
     print('silhouette_score:', f'{silhouette_avg:.4f}')
-
-    cv_scores = cross_val_score(model, X_train, labels, cv=cv, scoring='silhouette')
-    print('cv_scores.mean:', f'{cv_scores.mean():.4f}')
 
     silhouette_vals = silhouette_samples(X_train, labels)
     y_ticks = []
@@ -46,3 +44,5 @@ def evaluate_clustering(model, X_train, labels, cv):
     plt.ylabel('Cluster')
     plt.title('Silhouette Plot')
     plt.show()
+
+X_train = preprocess_data('./data/train.csv')

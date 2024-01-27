@@ -1,6 +1,5 @@
 from sklearn.neural_network import MLPClassifier
-from preprocessing import X_test, X_train, y_test, y_train
-from evaluation import evaluate_classification
+from supervised import X_test, X_train, evaluate_classification, y_test, y_train
 
 mlp = MLPClassifier(
     hidden_layer_sizes=(100, 50),  # Adjust the hidden layer sizes as needed
