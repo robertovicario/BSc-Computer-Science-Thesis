@@ -1,7 +1,7 @@
 import matplotlib.pyplot as plt
 import pandas as pd
-from sklearn.metrics import silhouette_samples, silhouette_score
 from sklearn.decomposition import PCA
+from sklearn.metrics import silhouette_samples, silhouette_score
 from sklearn.preprocessing import StandardScaler
 
 def preprocess_data(file_path):
