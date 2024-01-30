@@ -1,6 +1,6 @@
 # Applicare il Machine Learning per il Rilevamento dello Stress negli Ambienti di Lavoro di Ufficio
 
-## Sommario
+## Prefazione
 
 ...
 
