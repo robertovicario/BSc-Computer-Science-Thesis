@@ -5,7 +5,7 @@ import seaborn as sns
 def analyze_data(file_path):
     df = pd.read_csv(file_path)
     pd.set_option('display.max_columns', None)
-    print('df.describe', df.describe(include='all'))
+    print(df.describe(include='all'))
 
     numeric_data = df.select_dtypes(include=['number'])
     correlation_matrix = numeric_data.corr()

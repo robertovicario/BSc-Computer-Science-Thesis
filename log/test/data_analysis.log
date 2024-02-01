@@ -1,4 +1,4 @@
-df.describe               MEAN_RR      MEDIAN_RR           SDRR          RMSSD  \
+              MEAN_RR      MEDIAN_RR           SDRR          RMSSD  \
 count   369289.000000  369289.000000  369289.000000  369289.000000   
 unique            NaN            NaN            NaN            NaN   
 top               NaN            NaN            NaN            NaN   
