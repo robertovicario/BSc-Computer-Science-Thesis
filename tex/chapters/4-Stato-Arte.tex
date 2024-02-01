@@ -1,0 +1,101 @@
+\pagestyle{fancy}
+
+\fancyhf{}
+
+\fancyhead[C]{Stato dell'arte}
+\fancyfoot[C]{\thepage}
+
+\fancypagestyle{plain}{
+    \fancyhf{}
+    \fancyfoot[C]{\thepage}
+}
+
+\chapter{Stato dell'arte}
+
+\large
+
+In questo capitolo, vengono illustrate le attuali ricerche di rilievo nello stato dell'arte relative al rilevamento dello stress mediante l'impiego di metodologie di machine learning.
+
+\section{Real-time stress detection}
+
+\begin{figure}[t]
+    \centering
+    \includegraphics[width=\linewidth]{img//4/1.png}
+    \caption{Implementazione pratica di un sistema di monitoraggio dello stress.}
+    \label{fig:4-1}
+\end{figure}
+
+Lo studio \textit{"Stress Monitoring Using Machine Learning, IoT, and Wearable Sensors"} di Al-Atawi et al. (2023) \cite{al2023stress} esplora l'integrazione di machine learning, internet of things (IoT) e sensori indossabili, i cosidetti "wearables", per il monitoraggio dello stress in tempo reale.
+
+\bigskip
+
+In un'implementazione pratica, come illustrato dalla figura \ref{fig:2-1}, tratta dallo studio di Khowaja et al. (2021) \cite{khowaja2021toward}, un sistema di monitoraggio dello stress, si sviluppa in queste fasi operative:
+
+\paragraph{Raccolta dei dati}
+
+I dati possono essere raccolti da wearables, come smartwatch, braccialetti fitness o occhiali intelligenti. Questi sensori possono misurare una varietà di parametri fisiologici, tra cui la frequenza cardiaca, la respirazione, la temperatura della pelle e l'attività muscolare.
+
+\paragraph{Classificazione e previsione dei risultati}
+
+La fase di classificazione e previsione dei risultati è quella in cui i dati raccolti vengono elaborati per identificare i livelli di stress. I metodi di classificazione e previsione possono essere basati su machine learning.
+
+\paragraph{Presentazione dei risultati}
+
+I risultati possono essere utilizzati per identificare le persone che sono a rischio di stress o che hanno già livelli di stress elevati. Queste informazioni vengono quindi trasmesse agli utenti finali attraverso applicativi dedicati.
+
+\section{Stress detection con modelli non supervisionati}
+
+Lo studio \textit{"Exploring Unsupervised Machine Learning Classification Methods for Physiological Stress Detection"} di Iqbal et al. (2022) \cite{iqbal2022exploring} analizza l'efficacia dei metodi non supervisionati per il rilevamento dello stress utilizzando segnali fisiologici. Gli autori valutano diversi metodi, tra cui affinity propagation e mean shift, estraendo le features dal dataset SWELL-KW.
+
+\bigskip
+
+I risultati dimostrano che i metodi di machine learning non supervisionati ottengono prestazioni paragonabili o superiori ai metodi supervisionati tradizionali su entrambi dataset. Affinity propagation e mean shift hanno mostrato le migliori performance, con punteggi F1 dell'80.10\% e del 78.05\%, rispettivamente. Anche k-means e mini-batch k-means hanno ottenuto buoni risultati, con punteggi F1 del 74.10\% e del 71.70\%, rispettivamente.
+
+\section{Stress detection con modelli non supervisionati di rilevamento delle anomalie}
+
+Lo studio \textit{"Evaluating different configurations of machine learning models and their transfer learning capabilities for stress detection using heart rate"} di Albaladejo-González et al. (2023) \cite{albaladejo2023evaluating} studia l'efficacia di vari modelli di apprendimento automatico nel rilevare lo stress sulla base dei dati della frequenza cardiaca. Gli autori analizzano diversi modelli supervisionati, incluso Multi-layer Perceptron (MLP), e altri modelli non supervisionati di rilevamento delle anomalie, tra cui Local Outlier Factor (LOF), estraendo le features dal dataset SWELL-KW.
+
+\bigskip
+
+Gli autori hanno valutato le prestazioni di ciascun modello utilizzando il punteggio F1, una metrica che considera sia la precisione che il richiamo. I risultati hanno mostrato che i modelli di rilevamento delle anomalie non supervisionati hanno superato i modelli supervisionati su entrambi i dataset. LOF ha ottenuto i punteggi F1 più elevati, pari al 77.17\%. Anche MLP ha ottenuto buoni risultati, con un punteggio F1 dell'82.75\%.
+
+\section{Stress detection con modelli di deep learning}
+
+Lo studio \textit{"Multi-Class Stress Detection through Heart Rate Variability: A Deep Neural Network based Study"} di Mortensen et al. (2023) \cite{mortensen2023multi} presenta un approccio innovativo al rilevamento dello stress, impiegando Deep Neural Network (DNN) per la classificazione ed estraendo le features dal dataset SWELL-KW.
+
+\bigskip
+
+I risultati dimostrano che il DNN proposto ha raggiunto un'elevata precisione, con un punteggio F1 del 99.80\% sui tre livelli di stress. Gli autori attribuiscono questo successo alla capacità delle DNN di apprendere modelli e relazioni complesse nei dati HRV.
+
+\section{Risultati dei modelli}
+
+\begin{table}[t]
+    \centering
+    \begin{tabular}{|lll|}
+        \hline
+        \textbf{Studio}
+        & \textbf{Modello}
+        & \textbf{Punteggio} \\
+        \hline
+        \cite{iqbal2022exploring}
+        & Affinity propagation
+        & 80.10\% \\
+        \cite{iqbal2022exploring}
+        & Mean shift
+        & 78.05\% \\
+        \cite{albaladejo2023evaluating}
+        & Local Outlier Factor (LOF)
+        & 77.17\% \\
+        \cite{albaladejo2023evaluating}
+        & Multi-layer Percepton (MLP)
+        & 82.75\% \\
+        \cite{mortensen2023multi}
+        & Deep Neural Network (DNN)
+        & 99.80\% \\
+        \hline
+    \end{tabular}
+    \caption{Risultati dei modelli allo stato dell'arte.}
+    \label{tab:4-1}
+\end{table}
+
+La tabella \ref{tab:4-1} offre un panorama completo dei risultati ottenuti nelle ricerche precedenti. Risalta in modo evidente l'eccezionale successo dei modelli di deep learning, i quali ottengono risultati straordinariamente elevati per questo tipo di ricerche. Al contrario, i metodi non supervisionati si distinguono per la loro robustezza, sebbene i loro risultati siano inferiori in confronto.

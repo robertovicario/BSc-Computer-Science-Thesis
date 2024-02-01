@@ -1,0 +1,97 @@
+\pagestyle{fancy}
+
+\fancyhf{}
+
+\fancyhead[C]{Segnali biomedici}
+\fancyfoot[C]{\thepage}
+
+\fancypagestyle{plain}{
+    \fancyhf{}
+    \fancyfoot[C]{\thepage}
+}
+
+\chapter{Segnali biomedici}
+
+\begin{figure}[t]
+    \centering
+    \includegraphics[width=\linewidth]{img//3/1.png}
+    \caption{Principali segnali utilizzati nel rilevamento dello stress.}
+    \label{fig:3-1}
+\end{figure}
+
+La figura \ref{fig:3-1}, tratta da \textit{"Review on psychological stress detection using biosignals"} di Giannakakis et al. (2019) \cite{giannakakis2019review}, illustra i principali segnali utilizzati nelle ricerche attinenti alla tematica della rilevazione dello stress.
+
+\bigskip
+
+In ricerche analoghe, sono stati utilizzati segnali sia fisici che fisiologici, in questa tesi, si è dato rilievo esclusivamente ai segnali fisiologici.
+
+\bigskip
+
+La categoria dei segnali fisici comprende misure direttamente correlate a grandezze fisiche. La raccolta di tali segnali avviene mediante l'utilizzo di sensori e strumentazione fisica specializzata. Questi segnali forniscono informazioni concrete e tangibili, spesso sotto forma di dati numerici, che possono essere analizzati per ottenere una valutazione accurata delle condizioni fisiche dell'organismo.
+
+\bigskip
+
+I segnali fisiologici comprendono misure che riflettono il normale funzionamento dei processi fisiologici all'interno dell'organismo. Questi segnali offrono una finestra sulle attività biologiche e metaboliche del corpo, consentendo agli operatori sanitari e ai ricercatori di comprendere meglio il funzionamento interno dell'organismo.
+
+\section{Frequenza cardiaca}
+
+La frequenza cardiaca è un parametro fisiologico, e si riferisce al numero di battiti cardiaci per unità di tempo, solitamente misurati in battiti al minuto. Questo parametro può essere descritto utilizzando l'equazione \ref{eq:3-1}.
+
+\begin{equation}
+    \boxed{
+    \text{HR} = \frac{\text{Heart beats}}{\text{Minutes}}
+    }
+    \label{eq:3-1}
+\end{equation}
+
+\bigskip
+
+Per un adulto, la frequenza cardiaca a riposo varia in genere da 60 a 100 battiti al minuto. Tuttavia, fattori come l'età, il livello di forma fisica e la salute generale possono influenzare la frequenza cardiaca di base di un individuo.
+
+\subsection{Elettrocardiografia}
+
+L'elettrocardiografia (ECG) è un processo che registra l'attività elettrica del cuore in un intervallo di tempo specifico. L'attività elettrica del cuore genera piccole correnti elettriche, l'elettrocardiografia cattura questi segnali elettrici e produce una rappresentazione grafica dell'attività cardiaca. Gli elettrodi, sotto forma di cerotti adesivi, vengono posizionati sulla pelle per catturare i segnali elettrici da diverse aree del cuore. I posizionamenti standard includono gli arti e il torace.
+
+\subsection{Elettrocardiogramma}
+
+\begin{figure}[t]
+    \centering
+    \includegraphics[width=\linewidth]{img//3/2.png}
+    \caption{Esempio di elettrocardiogramma (ECG) che mostra gli impulsi elettrici generati dal cuore durante ogni ciclo cardiaco.}
+    \label{fig:3-2}
+\end{figure}
+
+L'elettrocardiogramma è una rappresentazione grafica, nonché l'output, prodotto dal processo di elettrocardiografia. L'elettrocardiogramma è quindi un grafico che mostra gli impulsi elettrici generati dal cuore durante ogni ciclo cardiaco.
+
+\bigskip
+
+La figura \ref{fig:3-2}, tratta dallo studio \textit{"A survey on ECG analysis"} di Berkaya et al. (2018) \cite{berkaya2018survey}, mostra un esempio di elettrocardiogramma. L'immagine raffigurata include diverse nomenclature; saranno prese in considerazione solo quelle che si sono rivelate utili per sviluppare la ricerca:
+
+\begin{enumerate}
+    \item \textbf{Onda P}: Rappresenta l'attività atriale, indicando la depolarizzazione degli atrii.
+    \item \textbf{Complesso QRS}: Indica la depolarizzazione dei ventricoli. È composto da onde Q, R e S.
+    \item \textbf{Onda T}: Rappresenta la ripolarizzazione dei ventricoli.
+\end{enumerate}
+
+\subsection{Intervallo RR}
+
+L'intervallo RR è il tempo, rappresentato in millisecondi, che intercorre tra le onde R consecutive in un elettrocardiogramma. Questo intervallo è fondamentale poiché riflette il tempo tra due depolarizzazioni ventricolari consecutive. La periodicità di questo intervallo, che rende misurabile la frequenza cardiaca, può essere analizzata ulteriormente attraverso la trasformata di Fourier, evidenziando così le componenti frequenziali del segnale cardiaco. Un intervallo RR può essere rappresentato come illustrato nell'equazione \ref{eq:3-2}.
+
+\begin{equation}
+    \boxed{
+    \text{RR interval} = \text{R}_{i+1}(t) - \text{R}_i(t)
+    }
+    \label{eq:3-2}
+\end{equation}
+
+\bigskip
+
+Dove, $R_i(t)$ rappresenta il tempo di occorrenza del $i$-esimo picco R e $R_{i+1}(t)$ il tempo del successivo picco R.
+
+\subsection{Heart Rate Variability}
+
+L'intervallo RR costituisce un elemento cruciale per la valutazione della HRV (Heart Rate Variability), parametro che è da lungo tempo un elemento cardine nello stato dell'arte per studi che riguardano la classificazione dello stress.
+
+\bigskip
+
+A titolo esemplificativo, si menziona il lavoro intitolato \textit{"Comparison of heart rate variability measures for mental stress detection"} di Boonnithi et al. (2011) \cite{boonnithi2011comparison}. In questo studio, gli autori hanno confrontato diverse misure della HRV per determinare la loro efficacia nel rilevare lo stress mentale.

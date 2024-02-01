@@ -1,0 +1,202 @@
+\pagestyle{fancy}
+
+\fancyhf{}
+
+\fancyhead[C]{Dataset SWELL-KW}
+\fancyfoot[C]{\thepage}
+
+\fancypagestyle{plain}{
+    \fancyhf{}
+    \fancyfoot[C]{\thepage}
+}
+
+\chapter{Dataset SWELL-KW}
+
+\large
+
+IL dataset SWELL-KW (SWELL Knowledge Work) è un insieme di dati multimodali raccolti in un esperimento, documentato in \textit{"The swell knowledge work dataset for stress and user modeling research"} di Koldijk et al. (2014) \cite{koldijk2014swell}. L'esperimento ha coinvolto 25 partecipanti che svolgevano compiti tipici del knowledge work. Il dataset include dati sui modelli di digitazione, sui movimenti del mouse, sulla pressione dei tasti e sul comportamento dello sguardo dei partecipanti, nonché sulla loro esperienza soggettiva di carico del compito, sforzo mentale, emozione e stress percepito.
+
+\bigskip
+
+Questo dataset è utile, in particolare utilizzando i segnali fisiologici, per sviluppare modelli di machine learning per classificare lo stress sul posto di lavoro. Questi modelli possono poi essere utilizzati per fornire un feedback in tempo reale agli utenti o per regolare l'interfaccia utente in modo che sia di maggior supporto.
+
+\bigskip
+
+Il dataset SWELL-KW è una risorsa preziosa per il rilevamento dello stress. Tuttavia, è importante notare che il dataset presenta alcune limitazioni:
+
+\begin{itemize}
+    \item I dati raccolti si basano sull'esperienza di soli 25 partecipanti. Questo limita la generalizzabilità dei risultati a una popolazione più ampia.
+    \item I compiti sono stati organizzati su attività di lavoro conosciute dagli individui. Questa situazione potrebbe non rendere la ricerca applicabile ad altre tipologie di impieghi, come lavori creativi, che richiedono più inventiva che metodologia.
+\end{itemize}
+
+\section{Raccolta dei dati}
+
+\begin{table}[t]
+    \centering
+    \begin{tabular}{|ll|}
+        \hline
+        \textbf{Tipo}
+        & \textbf{Features} \\
+        \hline
+        Interazioni con il computer
+        & Mouse (3) \\ 
+        & Tastiera (7) \\
+        & Applicazioni (2) \\
+        Espressioni facciali
+        & Orientamento della testa (3) \\
+        & Movimenti del viso (10) \\
+        & Unità di azione (19) \\
+        & Emozione (8) \\
+        Posture del corpo
+        & Distanza (1) \\
+        & Angoli di giunzione (10) \\
+        & Orientamenti delle ossa (3 x 11) \\
+        Fisiologia
+        & HRV (2) \\
+        & Conduttanza cutanea (1) \\
+        \hline
+    \end{tabular}
+    \caption{Features raccolte durante l'esperimento.}
+    \label{tab:2-1}
+\end{table}
+
+Durante l'esperimento, i partecipanti hanno svolto una serie di compiti conosciuti, come scrivere relazioni, fare presentazioni, leggere e-mail e cercare informazioni. Durante ogni compito, ai partecipanti è stato anche chiesto di eseguire un compito stressante. La raccolta dei dati è stata condotta utilizzando una serie di sensori, tra cui una webcam, un sensore della tastiera, un sensore del mouse e un eye tracker. I sensori sono stati utilizzati per raccogliere dati sui modelli di digitazione dei partecipanti, sui movimenti del mouse, sulla pressione dei tasti e sul comportamento dello sguardo.
+
+\bigskip
+
+Oltre ai dati dei sensori, i partecipanti hanno completato una serie di questionari per valutare la loro esperienza soggettiva del carico di lavoro, dello sforzo mentale, delle emozioni e dello stress percepito. Questi questionari hanno fornito una verità di base per i dati del sensore, consentendo ai ricercatori di collegare il comportamento osservato alle esperienze soggettive dei partecipanti.
+
+\bigskip
+
+In conclusione, dopo una sintesi dei dati raccolti, è possibile osservare una rappresentazione completa e organizzata delle features ricavate nella tabella \ref{tab:2-1}.
+
+\section{Analisi delle features}
+
+\begin{table}[t]
+    \centering
+    \begin{tabular}{|lp{0.5\linewidth}|}
+        \hline
+        \textbf{Feature}
+        & \textbf{Descrizione} \\
+        \hline
+        MEAN\_RR
+        & Media di tutti gli intervalli RR. \\
+        MEDIAN\_RR
+        & Mediana di tutti gli intervalli RR \\
+        SDRR
+        & Deviazione standard di tutti gli intervalli RR. \\
+        RMSSD
+        & Radice quadrata della media della somma dei quadrati della differenza tra gli intervalli RR adiacenti. \\
+        SDSD
+        & Deviazione standard delle differenze tra intervalli RR adiacenti. \\
+        SDRR\_RMSSD
+        & Rapporto tra SDRR e RMSSD. \\
+        HR
+        & Frequenza cardiaca. \\
+        pNN25
+        & Percentuale di intervalli RR adiacenti che differiscono di oltre 25 ms. \\
+        pNN50
+        & Percentuale di intervalli RR adiacenti che differiscono di oltre 50 ms. \\
+        SD1
+        & Descrittore del grafico di Poincaré dell'HRV a breve termine. \\
+        SD2
+        & Descrittore del grafico di Poincaré dell'HRV a lungo termine. \\
+        KURT
+        & Curtosi di tutti gli intervalli RR. \\
+        SKEW
+        & Skewness di tutti gli intervalli RR. \\
+        \hline
+    \end{tabular}
+    \caption{Features fondamentali nel dataset SWELL-KW.}
+    \label{tab:2-2}
+\end{table}
+
+Lo studio \textit{"Thermal Comfort and Stress Recognition in Office Environment"} di Nkurikiyeyezu et al. (2014) \cite{nkurikiyeyezu2019thermal} fornisce una visione d'insieme delle features estratte dal dataset SWELL-KW. Nella tabella \ref{tab:2-2}, sono illustrate e descritte le features estratte che sono state scelte e impiegate nel progetto presentato in questa tesi. Le seguenti features possono essere considerate fondamentali, poiché derivano da operazioni statistiche elementari, come la media, la mediana e altre, applicate ai segnali fisiologici campionati.
+
+\subsection{Frequenza relativa degli intervalli RR}
+
+\begin{table}[t]
+    \centering
+    \begin{tabular}{|lp{0.5\linewidth}|}
+        \hline
+        \textbf{Feature}
+        & \textbf{Descrizione} \\
+        \hline
+        MEAN\_REL\_RR
+        & Media di tutti gli intervalli RR relativi. \\
+        MEDIAN\_REL\_RR
+        & Mediana di tutti gli intervalli RR relativi. \\
+        SDRR\_REL\_RR
+        & Deviazione standard di tutti gli intervalli RR relativi. \\
+        RMSSD\_REL\_RR
+        & Radice quadrata della media della somma dei quadrati della differenza tra intervalli RR relativi adiacenti. \\
+        SDSD\_REL\_RR
+        & Deviazione standard di tutti gli intervalli di differenze tra intervalli RR relativi adiacenti. \\
+        SDRR\_RMSSD\_REL
+        & Rapporto tra SDRR\_REL e RMSSD\_REL. \\
+        KURT\_REL\_RR
+        & Curtosi di tutti gli intervalli RR relativi. \\
+        SKEW\_REL\_RR
+        & Skewness di tutti gli intervalli RR relativi. \\
+        \hline
+    \end{tabular}
+    \caption{Features del dataset SWELL-KW basate sulla frequenza relativa degli intervalli RR.}
+    \label{tab:2-3}
+\end{table}
+
+All'interno del dataset sono disponibili altre features, come è possibile osservare dalla tabella \ref{tab:2-3}. Queste features hanno il nome di quelle precedentemente presentate nella tabella \ref{tab:2-2}, con l'aggiunta della dicitura "\_REL\_RR", che indica "frequenza relativa agli intervalli RR". Per comprenderne il significato, è necessario fare riferimento alle nozioni statistiche di frequenza assoluta e frequenza relativa. La frequenza assoluta rappresenta il conteggio dei casi in una feature specifica. La frequenza relativa, invece, offre una prospettiva in percentuale su quanto una feature sia rappresentata rispetto all'intervallo RR. Le features presenti nella tabella \ref{tab:2-2} sono basate su frequenza assoluta, mentre quelle presenti nella tabella \ref{tab:2-3} utilizzano la frequenza relativa, entrambe le categorie su intervalli RR.
+
+\bigskip
+
+Per un'analisi più dettagliata sull'argomento, è stato preso in considerazione lo studio \textit{"A robust, simple and reliable measure of heart rate variability using relative RR interval"} di Vollmer et al. (2015) \cite{vollmer2015robust}.
+
+\subsection{Potenza di campionamento del segnale}
+
+\begin{table}[t]
+    \centering
+    \begin{tabular}{|lp{0.5\linewidth}|}
+        \hline
+        \textbf{Feature}
+        & \textbf{Descrizione} \\
+        \hline
+        VLF
+        & Banda di frequenza molto bassa dello spettro di potenza dell'HRV. \\
+        LF
+        & Banda di frequenza bassa dello spettro di potenza dell'HRV. \\
+        HF
+        & Banda di frequenza alta dello spettro di potenza dell'HRV. \\
+        TP
+        & Spettro di potenza totale HRV. \\
+        LF/HF
+        & Rapporto tra LF e HF. \\
+        HF/LF
+        & Rapporto tra HF e LF. \\
+        sampen
+        & Entropia del campione del segnale RR. \\
+        higuci
+        & Dimensione frattale di Higuchi. \\
+        \hline
+    \end{tabular}
+    \caption{Features del dataset SWELL-KW basate sulla potenza di campionamento del segnale.}
+    \label{tab:2-5}
+\end{table}
+
+La tabella \ref{tab:2-5}, presenta l'ultimo insieme di features, le quali condividono tutte l'attributo comune di essere basate sulla potenza di campionamento, focalizzandosi specificamente sulla banda di frequenza dello spettro di potenza.
+
+\bigskip
+
+Per ottenere una comprensione più dettagliata di queste features, è stato fatto riferimento principalmente allo studio \textit{"A robust, simple and reliable measure of heart rate variability using relative RR interval"} di Vollmer et al. (2015) \cite{vollmer2015robust}. Per la feature sampen, è stata consultata la ricerca \textit{"Advances in heart rate variability signal analysis: joint position statement by the e-Cardiology ESC Working Group and the European Heart Rhythm Association co-endorsed by the Asia Pacific Heart Rhythm Society"} di Sassi et al. (2015) \cite{sassi2015advances}. Per la feature higuci, è stato consultato lo studio \textit{"Higuchi fractal analysis of heart rate variability is sensitive during recovery from exercise in physically active men"} di Gomes et al. (2017) \cite{gomes2017higuchi}.
+
+\section{Analisi delle labels}
+
+Come illustrato precedentemente, i partecipanti coinvolti nell'esperimento sono stati soggetti a circostanze particolari durante lo svolgimento delle attività lavorative. Questo approccio mirava a categorizzare e valutare il livello di stress, in tre situazioni:
+
+\begin{itemize}
+    \item \textbf{No stress}: In questa condizione, i partecipanti hanno avuto la libertà di lavorare secondo i propri ritmi senza pressioni esterne. Dopo 45 minuti dall'inizio dell'attività, è stato loro chiesto di fermarsi. Questo scenario è stato considerato come un riferimento per uno stato di nessun stress.
+    \item \textbf{Time pressure}: Per simulare uno stress moderato, ai partecipanti è stato dato un tempo limitato di 30 minuti per completare le loro attività. Questa condizione rappresenta una situazione di pressione temporale che si può riscontrare frequentemente nell'ambiente lavorativo.
+    \item \textbf{Interruption}: Questa condizione è stata considerata come il livello massimo di stress. Non sono stati forniti dettagli specifici su come è stata implementata questa interruzione, ma si intuisce che si tratti di un evento o una serie di eventi che hanno portato i partecipanti a vivere una situazione di forte disagio o interruzione del flusso di lavoro.
+\end{itemize}
+
+\section{Informazioni sul dataset}
+
+Il dataset SWELL-KW è accessibile pubblicamente per il download tramite la piattaforma \href{https://www.kaggle.com/datasets/qiriro/swell-heart-rate-variability-hrv}{\underline{Kaggle}}. All'interno di questa risorsa, è possibile reperire il dataset elaborato in file CSV, opportunamente diviso in train e testing set. La distribuzione di tali insiemi è stata configurata con una proporzione del 70\% per l'addestramento e del 30\% per il test. Complessivamente, il dataset comprende oltre 400.000 tuple, fornendo un ampio spettro di dati per le analisi e le applicazioni desiderate.

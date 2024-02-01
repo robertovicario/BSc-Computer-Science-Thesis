@@ -1,0 +1,125 @@
+\documentclass[12pt]{report}
+
+% Metadata
+\title{Applicare il Machine Learning per il Rilevamento dello Stress negli Ambienti di Lavoro di Ufficio}
+\author{Roberto Vicario}
+
+% Language and Encoding Settings
+\usepackage[italian]{babel}
+
+% Formatting and Layout
+\usepackage{geometry}
+\geometry{
+    top=3cm,
+    left=2.5cm,
+    right=2.5cm,
+    bottom=3cm
+}
+\setlength{\parindent}{0pt}
+\usepackage{fancyhdr}
+\usepackage{setspace}
+\usepackage{float}
+\usepackage{multicol}
+
+% Fonts and Typography
+\usepackage{fontspec}
+\setmainfont{Arial}
+\usepackage{lipsum}
+\usepackage{xcolor}
+
+% Graphics
+\usepackage{graphicx}
+\usepackage{svg}
+
+% Mathematics and programming
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{listings}
+\lstset{
+    language=Python,
+    frame=tlrb,
+    aboveskip=3mm,
+    belowskip=6mm,
+    showstringspaces=false,
+    columns=flexible,
+    basicstyle={\small\ttfamily},
+    numbers=left,
+    numberstyle=\tiny\color{black}\ttfamily,
+    numbersep=4pt,
+    keywordstyle=\color{black},
+    commentstyle=\color{black},
+    stringstyle=\color{black},
+    breaklines=true,
+    breakatwhitespace=true,
+    tabsize=2
+}
+
+% Hyperlinks
+\usepackage[
+    colorlinks=true,
+    linkcolor=black,
+    citecolor=black,
+    urlcolor=black,
+]{hyperref}
+
+% Bibliography and References
+\usepackage{biblatex}
+\addbibresource{pages/references.bib}
+
+\begin{document}
+
+\input{pages/front}
+\input{pages/blank}
+\pagebreak
+
+\input{pages/Ringraziamenti}
+\input{pages/blank}
+\pagebreak
+
+\setcounter{page}{1}
+\pagenumbering{Roman}
+
+\input{pages/index}
+\input{pages/blank}
+\pagebreak
+
+\setcounter{page}{1}
+\pagenumbering{arabic}
+
+\setcounter{chapter}{0}
+\input{chapters/1-Introduzione}
+\pagebreak
+
+\setcounter{chapter}{1}
+\input{chapters/2-Dataset-SWELL-KW}
+\pagebreak
+
+\setcounter{chapter}{2}
+\input{chapters/3-Segnali-Biomedici}
+\pagebreak
+
+\setcounter{chapter}{3}
+\input{chapters/4-Stato-Arte}
+\pagebreak
+
+\setcounter{chapter}{4}
+\input{chapters/5-Metodologia}
+\pagebreak
+
+\setcounter{chapter}{5}
+\input{chapters/6-Risultati}
+\pagebreak
+
+\setcounter{chapter}{6}
+\input{chapters/7-Conclusione}
+\input{pages/blank}
+\pagebreak
+
+\setcounter{page}{1}
+\pagenumbering{Alph}
+
+\input{pages/bib}
+\input{pages/blank}
+\pagebreak
+
+\end{document}

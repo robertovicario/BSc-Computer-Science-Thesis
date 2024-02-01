@@ -1,16 +1,12 @@
 # Applicare il Machine Learning per il Rilevamento dello Stress negli Ambienti di Lavoro di Ufficio
 
-## Prefazione
+## Riassunto
 
-...
+Il rilevamento dello stress negli ambienti di lavoro, rappresenta un elemento innovativo per promuovere la salute e il benessere dei dipendenti, soprattutto negli embienti di lavoro d’ufficio. L’utilizzo del machine learning in questo caso offre un approccio efficace per identificare segnali precoci di stress, consentendo alle organizzazioni di intervenire tempestivamente per mitigare i rischi associati. In particolare, è di nostro interesse esaminare se i risultati ottenuti attraverso metodi di apprendimento non supervisionato possano essere paragonabili a quelli derivanti da approcci supervisionati, come evidenziato nella ricerca *"Exploring Unsupervised Machine Learning Classification Methods for Physiological Stress Detection"* di Iqbal et al. (2022).
 
-| <a href="https://raw.githubusercontent.com/robertovicario/BSc-Computer-Science-Thesis/main/Applicare-il-Machine-Learning-per-il-Rilevamento-dello-Stress-negli-Ambienti-di-Lavoro-di-Ufficio.pdf"><img src="https://raw.githubusercontent.com/robertovicario/BSc-Computer-Science-Thesis/main/img/thesis.png" alt="thesis.png" width="256"/></a> |
+| <a href="https://raw.githubusercontent.com/robertovicario/BSc-Computer-Science-Thesis/main/Applicare_il_Machine_Learning_per_il_Rilevamento_dello_Stress_negli_Ambienti_di_Lavoro_di_Ufficio.pdf" download><img src="https://raw.githubusercontent.com/robertovicario/BSc-Computer-Science-Thesis/main/img/thesis.png" alt="thesis.png" width="256"/></a> |
 | :--: |
 | Tesi di Laurea |
-
-## Istruzioni
-
-...
 
 ## Licenza
 
